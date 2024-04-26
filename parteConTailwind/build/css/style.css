@@ -554,9 +554,9 @@ video {
   --tw-contain-style:  ;
 }
 
-.bg-gray-950 {
+.bg-slate-600 {
   --tw-bg-opacity: 1;
-  background-color: rgb(3 7 18 / var(--tw-bg-opacity));
+  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 }
 
 .text-3xl {
@@ -566,6 +566,11 @@ video {
 
 .text-6xl {
   font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-9xl {
+  font-size: 8rem;
   line-height: 1;
 }
 
