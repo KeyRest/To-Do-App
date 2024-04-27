@@ -19,7 +19,8 @@
                     <a class="text-white text-5xl font-light hover:text-blue-700" href="#" onclick="showSignUp()">Sign
                         Up</a>
                     <p class="text-white text-3xl">or</p>
-                    <a class="textColor underline text-5xl font-light hover:text-blue-700" href="" onclick="showSignIn()">Sign In</a>
+                    <a class="textColor underline text-5xl font-light hover:text-blue-700" href=""
+                        onclick="showSignIn()">Sign In</a>
                 </div>
 
                 <div class="justify-start flex flex-col gap-8">
@@ -88,7 +89,7 @@
                         <button
                             class="buttonColor text-white px-10 py-3 rounded-full font-bold text-xs hover:bg-blue-700">Sign
                             Up</button>
-                        <a class="text-white hover:underline hover:text-blue-500" href="">Already a member?</a>
+                        <a class="text-white hover:underline hover:text-blue-500" href="" onclick="showSignInFromSignUp">Already a member?</a>
                     </div>
                 </div>
             </div>
@@ -115,6 +116,10 @@
             document.getElementById('sign-up').classList.add('hidden');
             document.getElementById('sign-in-link').classList.add('active');
             document.getElementById('sign-up-link').classList.remove('active');
+        }
+
+        function showSignInFromSignUp() {
+            showSignIn();
         }
     </script>
 
