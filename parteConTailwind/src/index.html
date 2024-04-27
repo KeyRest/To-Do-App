@@ -16,7 +16,8 @@
                 <img class="w-80 h-auto" src="../build/imgs/Logo_dark.png" alt="">
 
                 <div class="flex flex-row pl-23 justify-start gap-3 pt-20 pb-24">
-                    <a class="text-white text-5xl font-light hover:text-blue-700" href="#" onclick="showSignUp()">Sign Up</a>
+                    <a class="text-white text-5xl font-light hover:text-blue-700" href="#" onclick="showSignUp()">Sign
+                        Up</a>
                     <p class="text-white text-3xl">or</p>
                     <a class="text-white text-5xl font-light hover:text-blue-700" href="">Sign In</a>
                 </div>
@@ -35,15 +36,19 @@
                     </div>
 
                     <div class="flex flex-row gap-7 items-center pt-5">
-                        <button class="buttonColor text-white px-10 py-3 rounded-full font-bold text-xs hover:bg-blue-700">Sign In</button>
-                        <a class="text-white hover:underline hover:text-blue-500" href="">Did you forget your password?</a>
+                        <button
+                            class="buttonColor text-white px-10 py-3 rounded-full font-bold text-xs hover:bg-blue-700">Sign
+                            In</button>
+                        <a class="text-white hover:underline hover:text-blue-500" href="">Did you forget your
+                            password?</a>
                     </div>
                 </div>
             </div>
 
             <div class="flex items-center justify-end">
                 <div class="w-3/4">
-                    <img class="w-screen h-screen object-cover" src="../build/imgs/background_sign.png" alt="background">
+                    <img class="w-screen h-screen object-cover" src="../build/imgs/background_sign.png"
+                        alt="background">
                 </div>
             </div>
         </div>
@@ -54,35 +59,44 @@
             <div class="pt-10">
                 <img class="w-80 h-auto" src="../build/imgs/Logo_dark.png" alt="">
 
-                <div class="flex flex-row pl-23 justify-start gap-3 pt-20 pb-24">
-                    <a class="text-white text-5xl font-light hover:text-blue-700" href="">Sign Up</a>
+                <div class="flex flex-row pl-23 justify-start gap-3 pt-[3rem] pb-16">
+                    <a id="sign-up-link" class="text-white text-5xl font-light hover:text-blue-700" href="">Sign Up</a>
                     <p class="text-white text-3xl">or</p>
-                    <a class="text-white text-5xl font-light hover:text-blue-700" href="#" onclick="showSignIn()">Sign In</a>
+                    <a id="sign-in-link" class="text-white text-5xl font-light hover:text-blue-700" href="#"
+                        onclick="showSignIn()">Sign In</a>
                 </div>
 
                 <div class="justify-start flex flex-col gap-8">
                     <div>
-                        <h3 class="font-bold text-yellow-500 pb-2">E-MAIL</h3>
+                        <h3 class="font-bold text-white pb-2">FULL NAME</h3>
                         <input class="w-2/3 border-b-2 border-white focus:outline-none bg-transparent text-white"
-                            type="text" placeholder="Enter your e-mail">
+                            type="text" placeholder="Enter your full name">
                     </div>
 
                     <div>
                         <h3 class="font-bold text-white pb-2">PASSWORD</h3>
                         <input class="w-2/3 border-b-2 border-white focus:outline-none bg-transparent text-white"
-                            type="text" placeholder="Enter your password">
+                            type="text" placeholder="Enter a strong password">
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white pb-2">E-MAIL</h3>
+                        <input class="w-2/3 border-b-2 border-white focus:outline-none bg-transparent text-white"
+                            type="text" placeholder="Your e-mail goes here">
                     </div>
 
                     <div class="flex flex-row gap-7 items-center pt-5">
-                        <button class="buttonColor text-white px-10 py-3 rounded-full font-bold text-xs hover:bg-blue-700">Sign In</button>
-                        <a class="text-white hover:underline hover:text-blue-500" href="">Did you forget your password?</a>
+                        <button
+                            class="buttonColor text-white px-10 py-3 rounded-full font-bold text-xs hover:bg-blue-700">Sign
+                            Up</button>
+                        <a class="text-white hover:underline hover:text-blue-500" href="">Already a member?</a>
                     </div>
                 </div>
             </div>
 
             <div class="flex items-center justify-end">
                 <div class="w-3/4">
-                    <img class="w-screen h-screen object-cover" src="../build/imgs/background_sign.png" alt="background">
+                    <img class="w-screen h-screen object-cover" src="../build/imgs/background_sign.png"
+                        alt="background">
                 </div>
             </div>
         </div>
@@ -92,11 +106,16 @@
         function showSignUp() {
             document.getElementById('sign-in').classList.add('hidden');
             document.getElementById('sign-up').classList.remove('hidden');
+            document.getElementById('sign-up-link').classList.add('active');
+            document.getElementById('sign-in-link').classList.remove('active');
         }
 
         function showSignIn() {
             document.getElementById('sign-in').classList.remove('hidden');
             document.getElementById('sign-up').classList.add('hidden');
+            document.getElementById('sign-in-link').classList.add('active');
+            document.getElementById('sign-up-link').classList.remove('active');
+
         }
     </script>
 

@@ -14,3 +14,7 @@
 .mainFont{
     font-family: 'Roboto', sans-serif;
 }
+
+.active {
+    color: #5677FC; 
+}
