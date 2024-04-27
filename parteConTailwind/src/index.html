@@ -1,16 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRUEBA</title>
+    <title>Contenedor de imagen con tamaño específico en Tailwind CSS</title>
     <link rel="stylesheet" href="../build/css/style.css">
 </head>
-<body class="bg-slate-600">
 
-    <h1 class=" text-6xl font-black">Pruebas</h1>
-    <h2 class="text-3xl text-blue-900">Prueba2</h2>
-   <p class="text-9xl">Holaaaaaaaaa.</p>
-    
+<body class="backgroundSign mainFont">
+
+    <section class="grid grid-cols-2 pl-20">
+        <section class="pt-10">
+            <img class="w-80 h-auto" src="../build/imgs/Logo_dark.png" alt="">
+
+
+            <div class="flex flex-row pl-23 justify-start gap-5 pt-10 pb-24">
+                <a class="text-white text-5xl font-light" href="">Sign Up</a>
+                <p class="text-white text-3xl">or</p>
+                <a class="text-white text-5xl font-light" href="">Sign In</a>
+            </div>
+
+            <div class="justify-start flex flex-col">
+                <h3 class="font-bold text-white">E-MAIL</h3>
+                
+                
+            </div>
+
+
+
+
+
+        </section>
+
+
+        <div class=" flex items-center justify-end">
+            <div class="w-3/4">
+                <img class="w-screen h-screen object-cover" src="../build/imgs/background_sign.png" alt="background">
+            </div>
+        </div>
+
+
+    </section>
+
 </body>
+
 </html>
