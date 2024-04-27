@@ -722,6 +722,10 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.underline {
+  text-decoration-line: underline;
+}
+
 .backgroundSign{
   background-color: #2c2d2d;
 }
@@ -730,12 +734,17 @@ video {
   background-color: #5677FC;
 }
 
+.textColor{
+  color: #5677FC ;
+}
+
 .mainFont{
   font-family: 'Roboto', sans-serif;
 }
 
 .active {
   color: #5677FC;
+  text-decoration: underline;
 }
 
 .hover\:bg-blue-700:hover {
@@ -761,3 +770,4 @@ video {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
+

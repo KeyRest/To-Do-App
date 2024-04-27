@@ -11,10 +11,16 @@
     background-color: #5677FC;
 }
 
+.textColor{
+    color: #5677FC ;
+}
+
 .mainFont{
     font-family: 'Roboto', sans-serif;
 }
 
 .active {
     color: #5677FC; 
+    text-decoration: underline;
 }
+
