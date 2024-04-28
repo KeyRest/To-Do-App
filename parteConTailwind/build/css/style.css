@@ -726,6 +726,10 @@ video {
   text-decoration-line: underline;
 }
 
+.duration-300 {
+  transition-duration: 300ms;
+}
+
 .backgroundSign{
   background-color: #2c2d2d;
 }
