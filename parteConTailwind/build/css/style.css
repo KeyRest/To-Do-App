@@ -730,27 +730,6 @@ video {
   transition-duration: 300ms;
 }
 
-.backgroundSign{
-  background-color: #2c2d2d;
-}
-
-.buttonColor{
-  background-color: #5677FC;
-}
-
-.textColor{
-  color: #5677FC ;
-}
-
-.mainFont{
-  font-family: 'Roboto', sans-serif;
-}
-
-.active {
-  color: #5677FC;
-  text-decoration: underline;
-}
-
 .hover\:bg-blue-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
@@ -774,4 +753,5 @@ video {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
+
 
