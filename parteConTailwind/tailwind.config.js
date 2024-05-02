@@ -4,25 +4,17 @@ module.exports = {
   theme: {
     extend: {
 
-
-      backgroundSign: {
-        "gray-background": "#2c2d2d",
-      },
-
       colors: {
-        "background-color": "#5677FC",
-        "textColor": "#5677FC",
+        "discord-color": "#5677FC", // Discord blue for buttons
+        "textColor": "#5677FC", //the color of blue-discord text
+        "gray-background": "#2c2d2d", //gray-background color
       },
 
 
-      mainFont: {
-        "fontFamily": ['Roboto', 'sans-serif'],
+      fontFamily: {
+        sans: ["Roboto, sans-serif"],
       },
-
-      active: {
-        "color": "#5677FC",
-        "text-decoration": "underline"
-      }
+      
     }
   },
   plugins: [],

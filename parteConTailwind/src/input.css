@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 
+.active {
+    color: #5677FC;
+    text-decoration: underline;
+  }

@@ -46,7 +46,7 @@ html,
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Roboto, sans-serif;
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
@@ -643,6 +643,16 @@ video {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.bg-discord-color {
+  --tw-bg-opacity: 1;
+  background-color: rgb(86 119 252 / var(--tw-bg-opacity));
+}
+
+.bg-gray-background {
+  --tw-bg-opacity: 1;
+  background-color: rgb(44 45 45 / var(--tw-bg-opacity));
+}
+
 .bg-transparent {
   background-color: transparent;
 }
@@ -717,6 +727,11 @@ video {
   font-weight: 300;
 }
 
+.text-discord-color {
+  --tw-text-opacity: 1;
+  color: rgb(86 119 252 / var(--tw-text-opacity));
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -728,6 +743,11 @@ video {
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+.active {
+  color: #5677FC;
+  text-decoration: underline;
 }
 
 .hover\:bg-blue-700:hover {
@@ -753,5 +773,3 @@ video {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
-
-
