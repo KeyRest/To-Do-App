@@ -7,6 +7,7 @@ import SearchBar from './searchBar.jsx'
 import ProfileButton from './profileButton.jsx'
 import NavBottom from './navBottom.jsx'
 
+
 export default function Home() {
     return (
         <div className='flex flex-col mx-8 lg:grid lg:grid-cols-4 justify-center items-center lg:h-svh'>
@@ -65,3 +66,4 @@ export default function Home() {
 
     );
 }
+
