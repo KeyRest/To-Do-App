@@ -1,5 +1,5 @@
 .button {
-    @apply h-16 w-80 text-2xl rounded-full border border-transparent cursor-pointer;
+    @apply h-16 w-80 text-2xl  rounded-full border border-transparent cursor-pointer hover:scale-105 duration-300;
 }
 
 .button--solid-blue {
