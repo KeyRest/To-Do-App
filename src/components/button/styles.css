@@ -13,3 +13,8 @@
 .button--solid-red{
     @apply bg-g-red text-white
 }
+
+.button--solid-discord-blue{
+    @apply bg-discord-blue text-white
+}
+
