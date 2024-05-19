@@ -21,7 +21,7 @@ export default function Login() {
               />
             </div>
 
-            <div className="flex flex-row pl-23 md:justify-start gap-3 pt-20 pb-24">
+            <div className="flex flex-row pl-23 md:justify-start gap-3 pt-20 pb-24 items-center">
               <a
                 className="text-black lg:text-5xl font-light hover:text-blue-600"
                 href=""
@@ -31,7 +31,7 @@ export default function Login() {
               </a>
               <p className="text-black lg:text-3xl ">or</p>
               <a
-                className="text-black lg:text-5xl font-light hover:text-blue-600"
+                className="text-discord-blue lg:text-5xl font-light hover:text-blue-600"
                 href=""
                 onClick={showSignIn}
               >
