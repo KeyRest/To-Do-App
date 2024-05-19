@@ -15,6 +15,6 @@
 }
 
 .button--solid-discord-blue{
-    @apply bg-discord-blue text-white
+    @apply bg-discord-blue text-white w-40
 }
 
