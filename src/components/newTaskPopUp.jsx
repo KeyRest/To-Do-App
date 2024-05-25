@@ -1,7 +1,9 @@
-import Button from "./components/button/button.jsx";
-import InputText from "./components/input/inputText/inputText.jsx";
-import InputDate from "./components/input/inputDate/inputDate.jsx";
-import Select from "./components/select/select.jsx";
+import Button from "./button/button.jsx";
+import InputText from "./input/inputText/inputText.jsx";
+import InputDate from "./input/inputDate/inputDate.jsx";
+import Select from "./select/select.jsx";
+import { Link } from 'react-router-dom';
+
 
 export default function NewTaskPopUp() {
     return (
@@ -44,7 +46,9 @@ export default function NewTaskPopUp() {
                             <Button variant="solid-red">Delete Task</Button>
                         </div>
                         <div class="flex gap-6 w-1/3 items-end">
-                            <Button variant="border">Close</Button>
+                            <Link to={"/home"}>
+                                <Button variant="border">Close</Button>
+                            </Link>
                             <Button variant="solid-blue">Save Changes</Button>
                         </div>
                     </div>

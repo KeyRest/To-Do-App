@@ -1,14 +1,17 @@
 
-import { getCurrentDate } from './utils'
-import NewTaskButton from './newTaskButton.jsx'
-import Task from './task.jsx'
-import BasicDateCalendar from './calendar.jsx'
-import SearchBar from './searchBar.jsx'
-import ProfileButton from './profileButton.jsx'
-import Courses from './courses.jsx'
-import Activity from './activity.jsx'
-import Statistics from './percentage.jsx'
-import Layout from './layout/Layout.jsx'
+import { getCurrentDate } from '../utils.js'
+import NewTaskButton from '../components/newTaskButton.jsx'
+import Task from '../components/task.jsx'
+import BasicDateCalendar from '../components/calendar.jsx'
+import SearchBar from '../components/searchBar.jsx'
+import ProfileButton from '../components/profileButton.jsx'
+import Courses from '../components/courses.jsx'
+import Activity from '../components/activity.jsx'
+import Statistics from '../components/percentage.jsx'
+import Layout from '../layout/Layout.jsx'
+import { Link } from 'react-router-dom';
+
+
 
 export default function Home() {
     return (
@@ -19,8 +22,10 @@ export default function Home() {
                 <div className='hidden lg:flex justify-between px-12 col-span-4'>
                     <img src="../public/logo-simple.png" alt="" />
                     <div className='flex items-end justify-end w-full'>
-                        <ProfileButton />
+                        <Link to={"/profile"}>
+                            <ProfileButton />
 
+                        </Link>
                     </div>
                 </div>
 
@@ -61,10 +66,16 @@ export default function Home() {
                     </div>
 
                     <div className='hidden lg:flex items-center justify-center w-full'>
-                        <Statistics />
+                        <Link to={"/statistics"}>
+                            <Statistics />
+
+                        </Link>
 
                     </div>
-                    <NewTaskButton />
+                    <Link to={"/task"}>
+                        <NewTaskButton />
+
+                    </Link>
 
                 </div>
 

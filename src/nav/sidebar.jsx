@@ -1,4 +1,4 @@
-import Calendar from "../calendar.jsx"
+import Calendar from "../components/calendar.jsx"
 
 export default function Sidebar(){
 

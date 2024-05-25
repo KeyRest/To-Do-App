@@ -1,4 +1,5 @@
-import Button from "./components/button/button.jsx";
+import Button from "../components/button/button.jsx";
+import { Link } from 'react-router-dom';
 
 
 export default function Profile() {
@@ -38,11 +39,20 @@ export default function Profile() {
 
                 <div className="grid lg:grid-cols-2 place-items-center gap-8 mt-10 w-full">
                     <Button variant="solid-red">Delete your account</Button>
-                    <div className="hidden lg:block"></div>
+                    <Link to={"/"}>
 
-                    <Button variant="border">Close</Button>
+                        <Button variant="solid">Log Out</Button>
+                    </Link>
 
-                    <Button variant="solid-blue">Save Changes</Button>
+                    <Link to={"/home"}>
+                        <Button variant="border">Close</Button>
+
+                    </Link>
+                    <Link to={"/home"}>
+
+                        <Button variant="solid-blue">Save Changes</Button>
+                    </Link>
+
                 </div>
 
 
