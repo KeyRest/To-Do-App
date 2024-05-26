@@ -7,7 +7,7 @@ export default function Task({ title, date, checked }) {
     return (
         <>
             <Link to={"/task"}>
-                <div className='flex gap-8 shadow-xl '>
+                <div className='flex gap-8 shadow-xl transition-transform  transform hover:scale-110 transition-colors duration-300 hover:bg-gray-200'>
                     <div className='flex justify-between items-center w-full  py-2 ml-6 gap-10 '>
                         <div className='flex flex-col gap-1'>
                             <h2 className='text-2xl text-ellipsis '>{title}</h2>

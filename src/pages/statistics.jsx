@@ -21,7 +21,7 @@ export default function Statistics() {
                 </div>
 
             </div>
-            <div className="flex items-center justify-between flex-col md:flex-row">
+            <div className="flex items-center justify-between flex-col md:flex-row ">
                 <PercentageCard title={"Fully completed tasks this week"}></PercentageCard>
                 <PercentageCard title={"Tasks completed this week"}></PercentageCard>
                 <PercentageCard title={"Working in tasks"}></PercentageCard>

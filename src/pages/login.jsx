@@ -17,7 +17,7 @@ export default function Login() {
             <div className="grid md:pl-20 duration-300">
               <div className="pt-10 duration-300 items-center md:items-start flex justify-center md:justify-start">
                 <img
-                  className="w-80 h-auto hidden md:block "
+                  className="md:w-80 xl:w-[35rem]  h-auto hidden md:block "
                   src="./src/imgs/Logo_white.png"
                   alt=""
                 />
