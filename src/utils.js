@@ -9,20 +9,3 @@ export function getCurrentDate(separator = '-') {
 }
 
 
- export function showSignUp() {
-    document.getElementById('sign-in').classList.add('hidden');
-    document.getElementById('sign-up').classList.remove('hidden');
-    document.getElementById('sign-up-link').classList.add('active');
-    document.getElementById('sign-in-link').classList.remove('active');
-}
-
-export function showSignIn() {
-    document.getElementById('sign-in').classList.remove('hidden');
-    document.getElementById('sign-up').classList.add('hidden');
-    document.getElementById('sign-in-link').classList.add('active');
-    document.getElementById('sign-up-link').classList.remove('active');
-}
-
-export function showSignInFromSignUp() {
-    showSignIn();
-}

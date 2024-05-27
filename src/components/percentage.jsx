@@ -36,10 +36,10 @@ const cleanPercentage = (percentage) => {
     );
   };
   
-  const Percentage = ({ percentage, colour }) => {
+  const Percentage = ({ percentage, colour, onClickCustom }) => {
     const pct = cleanPercentage(percentage);
     return (
-      <svg width={200} height={200}>
+      <svg width={200} height={200} onClick={onClickCustom}>
         <g transform={`rotate(-90 ${"100 100"})`}>
           <Circle colour="lightgrey" />
           <Circle colour={colour} percentage={pct} />

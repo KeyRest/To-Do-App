@@ -14,6 +14,9 @@ import { PiHouse } from "react-icons/pi";
 
 
 
+
+
+
 const BottomNavigationBtn = styled(BottomNavigationAction)({
     color: 'black',
     '&.Mui-selected': {
@@ -22,10 +25,9 @@ const BottomNavigationBtn = styled(BottomNavigationAction)({
 });
 
 
-export default function NavBottom() {
+export default function NavBottom({ onClickCustom }) {
     const [value, setValue] = React.useState('home');
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
 
 
     const handleChange = (event, newValue) => {
@@ -37,6 +39,7 @@ export default function NavBottom() {
         } if (newValue === 'home') {
             setIsMenuOpen(false);
 
+        } if (newValue === 'profile') {
         }
 
         setValue(newValue);
@@ -50,7 +53,7 @@ export default function NavBottom() {
                 setValue("home");
             }}></div>}
 
-            <BottomNavigation value={value} onChange={handleChange} >
+            <BottomNavigation value={value} onChange={handleChange} className='border-t-2'>
 
                 <BottomNavigationBtn
                     value="menu"
@@ -63,20 +66,24 @@ export default function NavBottom() {
                     icon={<PiHouse size="40" />}
 
                 />
+
                 <BottomNavigationBtn
                     value="profile"
                     icon={<img src='https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg' className='rounded-full h-10' />}
                 />
+
+
+
+
+                <div className={`sidebar ${isMenuOpen ? '-translate-x-10' : '-translate-x-96'} z-[-1]`}>
+                    <Sidebar></Sidebar>
+                </div>
+
             </BottomNavigation >
-
-            <div className={`sidebar ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} z-[-1]`}>
-                <Sidebar></Sidebar>
-            </div>
-
 
 
         </>
 
     );
-}
+};
 

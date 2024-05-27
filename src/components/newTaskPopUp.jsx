@@ -2,38 +2,37 @@ import Button from "./button/button.jsx";
 import InputText from "./input/inputText/inputText.jsx";
 import InputDate from "./input/inputDate/inputDate.jsx";
 import Select from "./select/select.jsx";
-import { Link } from 'react-router-dom';
 
 
-export default function NewTaskPopUp() {
+export default function NewTaskPopUp({ onClickCustom }) {
     return (
         <>
-            <body class="m-12 h-[83vh]">
-                <h1 class="text-5xl font-extrabold pb-6">
+            <div className=" flex flex-col justify-between w-full px-40 py-10 ">
+                <h1 className="text-5xl font-extrabold ">
                     Write an essay for TM-5500
                 </h1>
-                <div class="flex flex-col h-full justify-between">
-                    <div class="flex flex-col lg:flex-row gap-12">
-                        <div class="w-2/3">
-                            <div class="py-6">
-                                <h2 class="text-2xl font-bold">Task name</h2>
+                <div className="flex flex-col h-full justify-between gap-8">
+                    <div className="flex flex-col lg:flex-row gap-12">
+                        <div className="w-full">
+                            <div className="py-6">
+                                <h2 className="text-2xl font-bold">Task name</h2>
                                 <InputText variant="md"></InputText>
                             </div>
-                            <div class="py-6">
-                                <h2 class="text-2xl font-bold">Description</h2>
+                            <div className="py-6">
+                                <h2 className="text-2xl font-bold">Description</h2>
                                 <InputText variant="lg"></InputText>
                             </div>
                         </div>
-                        <div class="flex flex-col w-1/3 py-14 text-left">
-                            <h2 class="text-2xl font-bold">Due date</h2>
+                        <div className="flex flex-col w-full py-14 text-left">
+                            <h2 className="text-2xl font-bold">Due date</h2>
                             <InputDate variant=""></InputDate>
-                            <h2 class="text-2xl font-bold mt-4">Priority</h2>
+                            <h2 className="text-2xl font-bold mt-4">Priority</h2>
                             <Select>
                                 <option value="high">High</option>
                                 <option value="yellow">Yellow</option>
                                 <option value="green">Green</option>
                             </Select>
-                            <h2 class="text-2xl font-bold mt-4">Category</h2>
+                            <h2 className="text-2xl font-bold mt-4">Category</h2>
                             <Select>
                                 <option value="personal">Personal</option>
                                 <option value="university">University</option>
@@ -41,19 +40,15 @@ export default function NewTaskPopUp() {
                             </Select>
                         </div>
                     </div>
-                    <div class=" flex">
-                        <div class="flex w-2/3">
-                            <Button variant="solid-red">Delete Task</Button>
-                        </div>
-                        <div class="flex gap-6 w-1/3 items-end">
-                            <Link to={"/home"}>
-                                <Button variant="border">Close</Button>
-                            </Link>
-                            <Button variant="solid-blue">Save Changes</Button>
-                        </div>
+                    <div className=" flex gap-16 my-8">
+                        <Button variant="solid-red">Delete Task</Button>
+
+                        <Button variant="border" onClickCustom={onClickCustom}>Close</Button>
+
+                        <Button variant="solid-blue">Save Changes</Button>
                     </div>
                 </div>
-            </body>
+            </div>
         </>
     );
 }

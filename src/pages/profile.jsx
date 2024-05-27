@@ -2,9 +2,9 @@ import Button from "../components/button/button.jsx";
 import { Link } from 'react-router-dom';
 
 
-export default function Profile() {
+export default function Profile({ onClickCustom }) {
     return (
-        <div className="flex items-center justify-center shadow-xl w-full lg:w-[60%] 2xl:w-[40%]  bg-white flex-col m-auto rounded-3xl">
+        <div className="flex items-center justify-center shadow-xl w-full  bg-white flex-col m-auto rounded-3xl">
             <div className="bg-[url('https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg')] h-80 w-full rounded-t-3xl     flex  justify-center lg:justify-start items-center">
                 <div className="relative">
                     <img src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg" alt="" className="rounded-full w-60 h-60 mx-8 object-cover" />
@@ -37,21 +37,18 @@ export default function Profile() {
                 </div>
 
 
-                <div className="grid lg:grid-cols-2 place-items-center gap-8 mt-10 w-full">
+                <div className="grid lg:grid-cols-3 place-items-center gap-8 mt-10 w-full">
                     <Button variant="solid-red">Delete your account</Button>
-                    <Link to={"/"}>
 
-                        <Button variant="solid">Log Out</Button>
-                    </Link>
 
                     <Link to={"/home"}>
-                        <Button variant="border">Close</Button>
+                        <Button onClickCustom={onClickCustom} variant="border">Close</Button>
 
                     </Link>
-                    <Link to={"/home"}>
 
-                        <Button variant="solid-blue">Save Changes</Button>
-                    </Link>
+
+                    <Button onClickCustom={onClickCustom} variant="solid-blue">Save Changes</Button>
+
 
                 </div>
 

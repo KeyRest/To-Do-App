@@ -5,14 +5,13 @@ import InputDate from "../components/input/inputDate/inputDate.jsx"
 import { Link } from 'react-router-dom';
 
 
-export default function Statistics() {
+export default function Statistics({ onClickCustom }) {
     return (
         <div className="flex flex-col w-full p-12 gap-10">
 
             <div className="flex justify-between items-center flex-col md:flex-row">
+                <a href="/home" className="my-2 font-bold md:hidden">Go back</a>
                 <div className="flex items-start  gap-4  flex-col">
-                    <Link to={"/home"} className="text-xl md:text-2xl font-bold md:bg-gray-200 md:p-4 rounded-full">Go back
-                    </Link>
                     <h1 className=" text-4xl md:text-6xl font-bold">Statistics Board</h1>
                 </div>
                 <div>
@@ -28,8 +27,8 @@ export default function Statistics() {
                 <PercentageCard title={"Missed tasks"}></PercentageCard>
             </div>
             <div className="flex gap-8 flex-col md:flex-row">
-                <DailyUseTime></DailyUseTime>
-                <DailyUseTime></DailyUseTime>
+                <DailyUseTime title={"aaa"} subtitle={"aaa"}></DailyUseTime>
+                <DailyUseTime title={"aaa"} subtitle={"aaa"}></DailyUseTime>
 
             </div>
         </div>

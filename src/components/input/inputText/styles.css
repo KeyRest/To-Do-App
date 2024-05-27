@@ -7,7 +7,7 @@
 }
 
 .inputText--lg{
-    @apply h-80 
+    @apply h-80 placeholder:align-top
 }
 
 .inputText--login{
