@@ -84,7 +84,7 @@ export default function NavBottom({ onClickCustom }) {
 
 
 
-                <div className={`sidebar ${isMenuOpen ? '-translate-x-10' : '-translate-x-96'} z-[-1]`}>
+                <div className={`sidebar ${isMenuOpen ? '-translate-x-14 md:-translate-x-64' : '-translate-x-[100rem]'} z-[-1] w-[80%] md:w-2/4 `}>
                     <Sidebar></Sidebar>
                 </div>
 
