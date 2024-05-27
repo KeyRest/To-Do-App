@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 export default function Profile({ onClickCustom }) {
     return (
-        <div className="flex items-center justify-center shadow-xl w-full  bg-white flex-col m-auto rounded-3xl">
-            <div className="bg-[url('https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg')] h-80 w-full rounded-t-3xl     flex  justify-center lg:justify-start items-center">
+        <div className="flex items-center justify-center shadow-xl w-full  bg-white flex-col m-auto  xl:rounded-3xl">
+            <div className="bg-[url('https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg')] h-80 w-full xl:rounded-t-3xl     flex  justify-center lg:justify-start items-center">
                 <div className="relative">
                     <img src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg" alt="" className="rounded-full w-60 h-60 mx-8 object-cover" />
                     <div className="absolute bg-blue-700 p-4 rounded-full top-44 right-12">
@@ -14,12 +14,12 @@ export default function Profile({ onClickCustom }) {
                 </div>
             </div>
 
-            <div className="w-full flex flex-col items-start  lg:p-10 p-5">
+            <div className="w-full flex flex-col xl:items-start lg:p-10 p-5">
                 <div className="mb-8 text-center">
                     <h1 className="text-4xl font-bold">Francisco Gonzales Flores</h1>
                 </div>
 
-                <div className="flex items-start justify-start gap-12 flex-col w-full">
+                <div className="flex xl:items-start justify-start gap-12 flex-col w-full h-full">
                     <div className="flex flex-col gap-2 lg:w-[50%] w-full">
                         <h2 className="text-2xl font-semibold">USERNAME</h2>
 
@@ -37,8 +37,10 @@ export default function Profile({ onClickCustom }) {
                 </div>
 
 
-                <div className="grid lg:grid-cols-3 place-items-center gap-8 mt-10 w-full">
+                <div className="grid lg:grid-cols-2 place-items-center gap-8 mt-10 w-full">
+                    
                     <Button variant="solid-red">Delete your account</Button>
+                    <div className="hidden lg:block"></div>
 
 
                     <Link to={"/home"}>

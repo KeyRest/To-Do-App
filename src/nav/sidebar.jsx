@@ -15,9 +15,12 @@ export default function Sidebar() {
 
     return (
 
-        <div className="w-[100%] flex flex-col items-start justify-center gap-10  h-full">
-            <Calendar></Calendar>
-            <Link to={"/statistics"} className="w-full flex items-centers justify-center">
+        <div className="w-full flex flex-col items-start justify-start    h-[80%]">
+            <div className="m-auto scale-90 md:scale-150">
+                <Calendar></Calendar>
+
+            </div>
+            <Link to={"/statistics"} className="w-full flex items-centers justify-center scale-125">
                 <StatisticsIcon /></Link>
 
         </div>

@@ -10,7 +10,8 @@ import { styled } from '@mui/system';
 import { MdMenu } from "react-icons/md";
 import { PiHouse } from "react-icons/pi";
 
-
+import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -26,6 +27,11 @@ const BottomNavigationBtn = styled(BottomNavigationAction)({
 
 
 export default function NavBottom({ onClickCustom }) {
+
+    const navigate = useNavigate();
+
+
+
     const [value, setValue] = React.useState('home');
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -38,8 +44,11 @@ export default function NavBottom({ onClickCustom }) {
 
         } if (newValue === 'home') {
             setIsMenuOpen(false);
+            navigate('/home');
 
         } if (newValue === 'profile') {
+            navigate('/profile');
+
         }
 
         setValue(newValue);
@@ -67,6 +76,7 @@ export default function NavBottom({ onClickCustom }) {
 
                 />
 
+
                 <BottomNavigationBtn
                     value="profile"
                     icon={<img src='https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg' className='rounded-full h-10' />}
@@ -74,8 +84,7 @@ export default function NavBottom({ onClickCustom }) {
 
 
 
-
-                <div className={`sidebar ${isMenuOpen ? '-translate-x-10' : '-translate-x-96'} z-[-1]`}>
+                <div className={`sidebar ${isMenuOpen ? '-translate-x-14 md:-translate-x-64' : '-translate-x-[100rem]'} z-[-1] w-[80%] md:w-2/4 `}>
                     <Sidebar></Sidebar>
                 </div>
 
