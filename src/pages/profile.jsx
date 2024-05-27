@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 export default function Profile({ onClickCustom }) {
     return (
-        <div className="flex items-center justify-center shadow-xl w-full  bg-white flex-col m-auto rounded-3xl">
-            <div className="bg-[url('https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg')] h-80 w-full rounded-t-3xl     flex  justify-center lg:justify-start items-center">
+        <div className="flex items-center justify-center shadow-xl w-full  bg-white flex-col m-auto md:rounded-3xl">
+            <div className="bg-[url('https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg')] h-80 w-full md:rounded-t-3xl     flex  justify-center lg:justify-start items-center">
                 <div className="relative">
                     <img src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg" alt="" className="rounded-full w-60 h-60 mx-8 object-cover" />
                     <div className="absolute bg-blue-700 p-4 rounded-full top-44 right-12">
