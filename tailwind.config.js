@@ -3,7 +3,7 @@ import animations from '@midudev/tailwind-animations'
 
 export default {
   content: ["./index.html",
-  "./src/**/*.{js,ts,jsx,tsx}",],
+    "./src/**/*.{js,ts,jsx,tsx}",],
   theme: {
     extend: {
       fontFamily: {
@@ -16,6 +16,13 @@ export default {
         'g-green': 'rgba(15,157,88,1)',
         'discord-blue': 'rgba(86,119,252,1)',
         'discord-gray': 'rgba(45,44,44,1)',
+      },
+      scale: {
+        '175': '1.75',
+      },
+      screens: {
+        '3xl': '1900px',
+        // => @media (min-width: 992px) { ... }
       },
     },
   },

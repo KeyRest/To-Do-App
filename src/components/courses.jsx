@@ -8,15 +8,15 @@ export default function Courses() {
     ];
 
     return (
-        <div className="flex items-center justify-center shadow-xl flex-col gap-4 w-80 p-14 m-auto">
-            <h2 className="font-bold">Registered Courses</h2>
+        <div className="flex items-center justify-center  flex-col gap-4   m-auto">
+            <h2 className="font-bold text-2xl">Registered Courses</h2>
             {courses.map((course, index) => (
                 <div
                     key={index}
-                    className="group relative text-center w-full shadow-xl rounded-full py-4 transition-transform duration-300 transform "
+                    className="group relative text-center w-full shadow-xl rounded-full py-4   "
                 >
-                    <span className="group-hover:hidden w-40 cursor-pointer">{course.original}</span>
-                    <span className="hidden group-hover:block w-40 cursor-pointer m-auto">{course.hover}</span>
+                    <span className="group-hover:hidden w-40 cursor-pointer ">{course.original}</span>
+                    <div className="hidden group-hover:flex items-center justify-center h-full w-40 cursor-pointer m-auto">{course.hover}</div>
                 </div>
             ))}
         </div>

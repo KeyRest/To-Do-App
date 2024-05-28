@@ -6,7 +6,7 @@ import Select from "./select/select.jsx";
 export default function NewTaskPopUp({ onClickCustom }) {
     return (
         <>
-            <div className="flex flex-col justify-between w-full h-screen overflow-auto px-6 py-10 lg:px-40 lg:py-10">
+            <div className="flex flex-col justify-between xl:w-full overflow-auto px-6 py-10 lg:px-40 lg:py-10 ">
                 <h1 className="text-3xl lg:text-5xl font-extrabold">
                     Write an essay for TM-5500
                 </h1>

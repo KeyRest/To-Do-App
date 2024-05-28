@@ -26,7 +26,7 @@ export default function Login() {
                 <img className="w-16 h-auto md:hidden " src="../public/logo_responsive_negro.png" alt="" />
               </div>
 
-              <div className="flex flex-row pl-23 md:justify-start justify-center gap-3 pt-20 pb-24 items-center">
+              <div className="flex flex-row pl-23 md:justify-start justify-center gap-3 pt-20 lg:pb-24 items-center">
                 <a
                   className="text-black lg:text-5xl text-4xl  font-light hover:text-blue-600 cursor-pointer "
 
@@ -78,7 +78,7 @@ export default function Login() {
                 <img className="w-16 h-auto md:hidden " src="../public/logo_responsive_negro.png" alt="" />
               </div>
 
-              <div className="flex flex-row pl-23 md:justify-start justify-center gap-3 pt-20 pb-24">
+              <div className="flex flex-row pl-23 md:justify-start justify-center gap-3 pt-20 lg:pb-24">
                 <a
                   className=" lg:text-5xl text-4xl font-light text-blue-600 cursor-pointer scale-105 duration-300"
 
