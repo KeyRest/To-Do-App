@@ -6,10 +6,12 @@ import { useState } from "react";
 export default function Login() {
   const [isOnLogin, setIsOnLogin] = useState(true);
   const [name, setName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [lastname, setLastName] = useState('');
   const [surname, setSurname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [profile_type_id, setProfile_type_id] = useState(1);
+  
 
   const handleSignUp = async () => {
     console.log("testing...");
@@ -19,7 +21,7 @@ export default function Login() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, lastName, surname, password, email }),
+        body: JSON.stringify({ name, lastname, surname, password, email, profile_type_id }),
       });
 
       if (response.ok) {
@@ -83,7 +85,7 @@ export default function Login() {
                 <form className="animate-fade-in-up" type="submit">
                   <div className="gap-2 flex flex-col justify-center items-center md:items-start my-8">
                     <InputLogin title={"NAME"} placeholder={"Enter your name"} value={name} onChange={(e) => setName(e.target.value)} />
-                    <InputLogin title={"LASTNAME"} placeholder={"Enter your lastname"} value={lastName} onChange={(e) => setLastName(e.target.value)} />
+                    <InputLogin title={"LASTNAME"} placeholder={"Enter your lastname"} value={lastname} onChange={(e) => setLastName(e.target.value)} />
                     <InputLogin title={"SURNAME"} placeholder={"Enter your surname"} value={surname} onChange={(e) => setSurname(e.target.value)} />
                     <InputLogin title={"PASSWORD"} placeholder={"Enter your password"} value={password} onChange={(e) => setPassword(e.target.value)} />
                     <InputLogin title={"E-MAIL"} placeholder={"Enter your e-mail"} value={email} onChange={(e) => setEmail(e.target.value)} />
