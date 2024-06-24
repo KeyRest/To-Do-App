@@ -1,6 +1,8 @@
 import InputLogin from "../components/input/inputSignINUP/inputSignINUP.jsx";
 import Button from "../components/button/button.jsx";
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+
 import { useState } from "react";
 
 export default function Login() {
@@ -11,12 +13,16 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [profile_type_id, setProfile_type_id] = useState(1);
-  
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
+  const handleInputChange = (setter) => (event) => {
+    setter(event.target.value);
+  };
 
-  const handleSignUp = async () => {
-    console.log("testing...");
+  const handleSignUp = async (event) => {
+    event.preventDefault();
     try {
-      const response = await fetch('http://localhost/Backend-todoapp/api/users', {
+      const response = await fetch('http://to-do-app-backend.test/api/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -25,8 +31,7 @@ export default function Login() {
       });
 
       if (response.ok) {
-        console.log('User registered successfully');
-
+        navigation.navigate('/home');
       } else {
         console.log('Failed to register user');
       }
@@ -35,13 +40,37 @@ export default function Login() {
     }
   };
 
+  const handleSignIn = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch('http://to-do-app-backend.test/api/login',
+
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, password }),
+        },
+      )
+      if (response.ok) {
+        navigate('/home');
+      } else {
+        setError(true);
+        console.log('Failed exists');
+      }
+    } catch (error) {
+      console.error('Error loggin user:', error);
+    }
+  };
+
   return (
     <>
       <body className="bg-white">
-        <section className="grid grid-cols-1 md:grid-cols-2 ">
+        <section className="grid grid-cols-1 md:grid-cols-2">
           {isOnLogin ? (
             <section>
-              <div className="grid md:pl-20 duration-300 ">
+              <div className="grid md:pl-20 duration-300">
                 <div className="pt-10 duration-300 items-center md:items-start flex justify-center md:justify-start">
                   <img className="md:w-80 xl:w-[25rem] h-auto hidden md:block" src="../public/Logo_white.png" alt="" />
                   <img className="w-16 h-auto md:hidden" src="../public/logo_responsive_negro.png" alt="" />
@@ -54,17 +83,21 @@ export default function Login() {
                 </div>
 
                 <div className="animate-fade-in-down">
-                  <div className="gap-2 flex flex-col justify-center items-center md:items-start my-8">
-                    <InputLogin title={"E-MAIL"} placeholder={"Enter your e-mail"} />
-                    <InputLogin title={"PASSWORD"} placeholder={"Enter your password"} />
-                  </div>
+                  <form className='animate-fade-in-up' type="submit" method="POST" onSubmit={handleSignIn}>
+                    <div className="gap-2 flex flex-col justify-center items-center md:items-start my-8">
+                      <InputLogin title={"E-MAIL"} placeholder={"Enter your e-mail"} type={"email"} value={email} onChange={handleInputChange(setEmail)} />
+                      <InputLogin title={"PASSWORD"} type={"password"} placeholder={"Enter your password"} value={password} onChange={handleInputChange(setPassword)} />
+                    </div>
 
-                  <div className="flex md:flex-row flex-col gap-7 items-center pt-5">
-                    <Link to={"/home"}>
-                      <Button variant="solid-discord-blue">Sign In</Button>
-                    </Link>
-                    <a className="text-black hover:underline hover:text-blue-500" href="">Did you forget your password?</a>
-                  </div>
+                   {error && <p className="text-red-500 font-bold flex justify-center md:justify-start">Wrong e-mail or password</p>}
+
+
+                    <div className="flex md:flex-row flex-col gap-7 items-center pt-5">
+                      <Button variant="solid-discord-blue" type="submit">Sign In</Button>
+                      <a className="text-black hover:underline hover:text-blue-500" href="">Did you forget your password?</a>
+                    </div>
+                  </form>
+
                 </div>
               </div>
             </section>
@@ -82,21 +115,20 @@ export default function Login() {
                   <a className="lg:text-5xl text-4xl font-light text-black cursor-pointer" onClick={() => setIsOnLogin(true)}>Sign In</a>
                 </div>
 
-                <form className="animate-fade-in-up" type="submit">
+                <form className="animate-fade-in-up" type="submit" method="POST" onSubmit={handleSignUp}>
                   <div className="gap-2 flex flex-col justify-center items-center md:items-start my-8">
-                    <InputLogin title={"NAME"} placeholder={"Enter your name"} value={name} onChange={(e) => setName(e.target.value)} />
-                    <InputLogin title={"LASTNAME"} placeholder={"Enter your lastname"} value={lastname} onChange={(e) => setLastName(e.target.value)} />
-                    <InputLogin title={"SURNAME"} placeholder={"Enter your surname"} value={surname} onChange={(e) => setSurname(e.target.value)} />
-                    <InputLogin title={"PASSWORD"} placeholder={"Enter your password"} value={password} onChange={(e) => setPassword(e.target.value)} />
-                    <InputLogin title={"E-MAIL"} placeholder={"Enter your e-mail"} value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <InputLogin title={"NAME"} placeholder={"Enter your name"} value={name} onChange={handleInputChange(setName)} />
+                    <InputLogin title={"LASTNAME"} placeholder={"Enter your lastname"} value={lastname} onChange={handleInputChange(setLastName)} />
+                    <InputLogin title={"SURNAME"} placeholder={"Enter your surname"} value={surname} onChange={handleInputChange(setSurname)} />
+                    <InputLogin title={"PASSWORD"} placeholder={"Enter your password"} value={password} onChange={handleInputChange(setPassword)} />
+                    <InputLogin title={"E-MAIL"} placeholder={"Enter your e-mail"} type={"email"} value={email} onChange={handleInputChange(setEmail)} />
                   </div>
 
                   <div className="flex md:flex-row flex-col gap-7 items-center pt-5">
-                    <Button variant="solid-discord-blue" onClick={handleSignUp}>Sign Up</Button>
+                    <Button type="submit" variant="solid-discord-blue">Sign Up</Button>
                     <a className="text-black hover:underline hover:text-blue-500" href="/home">Did you forget your password?</a>
                   </div>
                 </form>
-
               </div>
             </section>
           )}
