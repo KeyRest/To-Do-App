@@ -3,23 +3,23 @@ import InputText from "./input/inputText/inputText.jsx";
 import InputDate from "./input/inputDate/inputDate.jsx";
 import Select from "./select/select.jsx";
 
-export default function NewTaskPopUp({ onClickCustom }) {
+export default function NewTaskPopUp({ onClickCustom, title, desc  }) {
     return (
         <>
             <div className="flex flex-col justify-between xl:w-full overflow-auto px-6 py-10 lg:px-40 lg:py-10 ">
                 <h1 className="text-3xl lg:text-5xl font-extrabold">
-                    Write an essay for TM-5500
+                    {title}
                 </h1>
                 <div className="flex flex-col h-full justify-between gap-8 mt-6">
                     <div className="flex flex-col lg:flex-row gap-6 lg:gap-12">
                         <div className="w-full">
                             <div className="py-4 lg:py-6">
                                 <h2 className="text-xl lg:text-2xl font-bold">Task name</h2>
-                                <InputText variant="md"></InputText>
+                                <InputText variant="md" value={title}></InputText>
                             </div>
                             <div className="py-4 lg:py-6">
                                 <h2 className="text-xl lg:text-2xl font-bold">Description</h2>
-                                <InputText variant="lg"></InputText>
+                                <InputText variant="lg" value={desc}></InputText>
                             </div>
                         </div>
                         <div className="flex flex-col w-full py-6 lg:py-14 text-left">

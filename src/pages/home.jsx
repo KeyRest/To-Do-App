@@ -15,6 +15,7 @@ import { useState } from 'react';
 import NewTaskPopUp from '../components/newTaskPopUp.jsx'
 import Statistics from '../pages/statistics.jsx'
 import Profile from '../pages/profile.jsx'
+import { useFetchDuties } from '../components/hooks/useFetchDuties'
 
 
 
@@ -24,7 +25,17 @@ export default function Home() {
     const [isStatisticsOpen, setStatisticsOpen] = useState(false);
     const [isProfileOpen, setProfileOpen] = useState(false);
 
-    const openTask = () => setTaskOpen(true);
+    const [taskName, setTaskName] = useState('');
+    const [taskDesc, setTaskDesc] = useState('');
+
+    const { duties } = useFetchDuties();
+
+    const openTask = (name, description) => {
+        setTaskName(name);
+        setTaskDesc(description);
+        setTaskOpen(true);
+    };
+
     const closeTask = () => setTaskOpen(false);
 
     const openStatistics = () => setStatisticsOpen(true);
@@ -36,7 +47,7 @@ export default function Home() {
     return (
         <Layout>
             <Popup isOpen={isTaskOpen} onClose={closeTask}>
-                <NewTaskPopUp onClickCustom={closeTask}></NewTaskPopUp>
+                <NewTaskPopUp onClickCustom={closeTask} title={taskName} desc={taskDesc}></NewTaskPopUp>
             </Popup>
             <Popup isOpen={isProfileOpen} onClose={closeProfile}>
                 <Profile onClickCustom={closeProfile}></Profile>
@@ -90,72 +101,16 @@ export default function Home() {
 
 
                         <div className='flex flex-col items-center gap-2 overflow-y-scroll  h-[60vh] lg:h-[65vh] xl:h-[31.5rem] 2xl:h-[31.5rem]   3xl:h-[36.5rem] w-full  m-auto '>
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artifiearch of Artifiearch of Artifiearch of Artifiearch of Artifiearch of Artifiearch of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
-                            <Task title={"Do a research of Artificial Intelligence for TM-7200"} date={getCurrentDate()}
-                                checked onCustomClick={openTask} />
+
+                            {duties.map((duty) => (
+                                <Task
+                                    key={duty.id}
+                                    title={duty.name}
+                                    date={duty.date}
+                                    onCustomClick={() => openTask(duty.name, duty.description)}
+                                />
+                            ))}
+
 
 
                         </div>
