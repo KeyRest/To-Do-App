@@ -22,12 +22,12 @@ export default function Login() {
   const handleSignUp = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('http://to-do-app-backend.test/api/users', {
+      const response = await fetch('http://to-do-app-backend.test/api/singup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, lastname, surname, password, email, profile_type_id }),
+        body: JSON.stringify({ name, lastname, surname, password, email, profile_type_id}),
       });
 
       if (response.ok) {
@@ -89,7 +89,7 @@ export default function Login() {
                       <InputLogin title={"PASSWORD"} type={"password"} placeholder={"Enter your password"} value={password} onChange={handleInputChange(setPassword)} />
                     </div>
 
-                   {error && <p className="text-red-500 font-bold flex justify-center md:justify-start">Wrong e-mail or password</p>}
+                    {error && <p className="text-red-500 font-bold flex justify-center md:justify-start">Wrong e-mail or password</p>}
 
 
                     <div className="flex md:flex-row flex-col gap-7 items-center pt-5">
