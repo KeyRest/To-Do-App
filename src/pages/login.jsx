@@ -22,7 +22,7 @@ export default function Login() {
   const handleSignUp = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('http://to-do-app-backend.test/api/singup', {
+      const response = await fetch('http://backend-todoapp.test/api/singup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ export default function Login() {
   const handleSignIn = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('http://to-do-app-backend.test/api/login',
+      const response = await fetch('http://backend-todoapp.test/api/login',
 
         {
           method: 'POST',
@@ -94,7 +94,7 @@ export default function Login() {
 
                     <div className="flex md:flex-row flex-col gap-7 items-center pt-5">
                       <Button variant="solid-discord-blue" type="submit">Sign In</Button>
-                      <a className="text-black hover:underline hover:text-blue-500" href="">Did you forget your password?</a>
+                      <a className="text-black hover:underline hover:text-blue-500" href="/password-recovery">Did you forget your password?</a>
                     </div>
                   </form>
 
@@ -120,7 +120,7 @@ export default function Login() {
                     <InputLogin title={"NAME"} placeholder={"Enter your name"} value={name} onChange={handleInputChange(setName)} />
                     <InputLogin title={"LASTNAME"} placeholder={"Enter your lastname"} value={lastname} onChange={handleInputChange(setLastName)} />
                     <InputLogin title={"SURNAME"} placeholder={"Enter your surname"} value={surname} onChange={handleInputChange(setSurname)} />
-                    <InputLogin title={"PASSWORD"} placeholder={"Enter your password"} value={password} onChange={handleInputChange(setPassword)} />
+                    <InputLogin type={"password"} title={"PASSWORD"} placeholder={"Enter your password"} value={password} onChange={handleInputChange(setPassword)} />
                     <InputLogin title={"E-MAIL"} placeholder={"Enter your e-mail"} type={"email"} value={email} onChange={handleInputChange(setEmail)} />
                   </div>
 
