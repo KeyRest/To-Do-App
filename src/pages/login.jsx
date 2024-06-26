@@ -66,17 +66,19 @@ export default function Login() {
 
   return (
     <>
-      <body className="bg-white">
+      <body className="bg-white" >
+
+      
         <section className="grid grid-cols-1 md:grid-cols-2">
           {isOnLogin ? (
             <section>
               <div className="grid md:pl-20 duration-300">
                 <div className="pt-10 duration-300 items-center md:items-start flex justify-center md:justify-start">
-                  <img className="md:w-80 xl:w-[25rem] h-auto hidden md:block" src="../public/Logo_white.png" alt="" />
-                  <img className="w-16 h-auto md:hidden" src="../public/logo_responsive_negro.png" alt="" />
+                  <img className="md:w-80 xl:w-[20rem] h-auto hidden md:block" src="../public/Logo_white.png" alt="" />
+                  <img className="w-10 h-auto md:hidden" src="../public/logo_responsive_negro.png" alt="" />
                 </div>
 
-                <div className="flex flex-row pl-23 md:justify-start justify-center gap-3 pt-20 lg:pb-24 items-center">
+                <div className="flex flex-row pl-23 md:justify-start justify-center gap-3 pt-[3rem] lg:pb-24 items-center">
                   <a className="text-black lg:text-5xl text-4xl font-light hover:text-blue-600 cursor-pointer" onClick={() => setIsOnLogin(false)}>Sign Up</a>
                   <p className="text-black lg:text-3xl text-2xl">or</p>
                   <a className="text-discord-blue lg:text-5xl text-4xl font-light hover:text-blue-600 cursor-pointer scale-105 duration-300" onClick={() => setIsOnLogin(true)}>Sign In</a>
@@ -105,11 +107,11 @@ export default function Login() {
             <section>
               <div className="grid md:pl-20 duration-300">
                 <div className="pt-10 duration-300 items-center md:items-start flex justify-center md:justify-start">
-                  <img className="md:w-80 xl:w-[25rem] h-auto hidden md:block" src="../public/Logo_white.png" alt="" />
+                  <img className="md:w-80 xl:w-[20rem] h-auto hidden md:block" src="../public/Logo_white.png" alt="" />
                   <img className="w-16 h-auto md:hidden" src="../public/logo_responsive_negro.png" alt="" />
                 </div>
 
-                <div className="flex flex-row pl-23 md:justify-start justify-center gap-3 pt-20 lg:pb-24">
+                <div className="flex flex-row pl-23 md:justify-start justify-center gap-3 pt-[3rem] lg:pb-15">
                   <a className="lg:text-5xl text-4xl font-light text-blue-600 cursor-pointer scale-105 duration-300" onClick={() => setIsOnLogin(false)}>Sign Up</a>
                   <p className="text-black lg:text-3xl text-2xl flex items-center">or</p>
                   <a className="lg:text-5xl text-4xl font-light text-black cursor-pointer" onClick={() => setIsOnLogin(true)}>Sign In</a>
@@ -133,8 +135,8 @@ export default function Login() {
             </section>
           )}
 
-          <section className="w-[100%] flex justify-end">
-            <img className="h-screen hidden md:block" src="../public/background_sign.png" alt="background_signIn" />
+          <section className="w-[100%] flex justify-end relative">
+            <img className="h-screen hidden md:block z-index" src="../public/background_sign.png" alt="background_signIn" />
           </section>
         </section>
       </body>

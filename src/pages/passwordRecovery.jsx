@@ -49,7 +49,7 @@ export default function PasswordRecovery() {
             <div className="grid md:pl-20 duration-300">
               <div className="pt-10 duration-300 items-center md:items-start flex justify-center md:justify-start pb-[2rem]" >
                 <img
-                  className="md:w-80 xl:w-[25rem] h-auto hidden md:block"
+                  className="md:w-80 xl:w-[25rem] h-auto hidden md:block pt-[3rem]"
                   src="../public/Logo_white.png"
                   alt=""
                 />
@@ -65,16 +65,16 @@ export default function PasswordRecovery() {
               </div>
 
               <div className="flex flex-row pl-23 md:justify-start justify-center items-center pb-[2rem] font-bold">
-                <button className="relative group">
+                <a className="relative group" href="/">
                   <img
                     className="w-[2rem] h-auto"
-                    src="../public/goback.png"
+                    src="../public/goback.png "
                     alt=""
                   />
                   <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-black bg-gray-200 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     Go back
                   </span>
-                </button>
+                </a>
               </div>
 
               <div className="animate-fade-in-down">
