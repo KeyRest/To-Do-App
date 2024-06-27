@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const dynamicRoute = import.meta.env.VITE_DYNAMIC_ROUTE;
-export const useFetchDuties = ({ id }) => {
+export const useFetchDuties = ({ user_id }) => {
 
   const [duties, setDuties] = useState([]);
   const getData = async () => {
@@ -14,7 +14,7 @@ export const useFetchDuties = ({ id }) => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ id }),
+          body: JSON.stringify({ user_id }),
         },
 
       );
