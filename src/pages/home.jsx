@@ -26,7 +26,7 @@ export default function Home() {
     const [taskName, setTaskName] = useState('');
     const [taskDesc, setTaskDesc] = useState('');
 
-    const { duties } = useFetchDuties();
+    const { duties } = useFetchDuties(2);
 
     // Sort duties by date
     const sortedDuties = duties.sort((a, b) => dayjs(a.date).diff(dayjs(b.date)));
