@@ -4,6 +4,7 @@ import Login from '../pages/login.jsx';
 import Profile from '../pages/profile.jsx';
 import Statistics from '../pages/statistics.jsx';
 import Task from '../components/newTaskPopUp.jsx';
+import PasswordRecovery from '../pages/passwordRecovery.jsx';
 
 export default function AppRouter() {
     return (
@@ -11,6 +12,7 @@ export default function AppRouter() {
             
             <Routes>
                 <Route path="/" element={<Login />} />
+                <Route path="/password-recovery" element={<PasswordRecovery />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/statistics" element={<Statistics />} />
