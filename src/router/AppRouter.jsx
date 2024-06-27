@@ -8,6 +8,7 @@ import Task from '../components/newTaskPopUp.jsx';
 export default function AppRouter() {
     return (
         <Router>
+            
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/home" element={<Home />} />

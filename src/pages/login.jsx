@@ -1,7 +1,7 @@
 import InputLogin from "../components/input/inputSignINUP/inputSignINUP.jsx";
 import Button from "../components/button/button.jsx";
 import { useNavigate } from 'react-router-dom';
-
+const dynamicRoute = import.meta.env.VITE_DYNAMIC_ROUTE;
 
 import { useState } from "react";
 
@@ -22,12 +22,12 @@ export default function Login() {
   const handleSignUp = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('http://to-do-app-backend.test/api/singup', {
+      const response = await fetch(`${dynamicRoute}api/singup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, lastname, surname, password, email, profile_type_id}),
+        body: JSON.stringify({ name, lastname, surname, password, email, profile_type_id }),
       });
 
       if (response.ok) {
@@ -43,7 +43,7 @@ export default function Login() {
   const handleSignIn = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('http://to-do-app-backend.test/api/login',
+      const response = await fetch(`${dynamicRoute}api/login`,
 
         {
           method: 'POST',
