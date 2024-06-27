@@ -22,11 +22,7 @@ export default function Login() {
   const handleSignUp = async (event) => {
     event.preventDefault();
     try {
-<<<<<<< HEAD
       const response = await fetch(`${dynamicRoute}api/singup`, {
-=======
-      const response = await fetch('http://backend-todoapp.test/api/singup', {
->>>>>>> 8f7915713db0c34ac5281f9e4551cbb9a8a32ebf
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -47,11 +43,7 @@ export default function Login() {
   const handleSignIn = async (event) => {
     event.preventDefault();
     try {
-<<<<<<< HEAD
       const response = await fetch(`${dynamicRoute}api/login`,
-=======
-      const response = await fetch('http://backend-todoapp.test/api/login',
->>>>>>> 8f7915713db0c34ac5281f9e4551cbb9a8a32ebf
 
         {
           method: 'POST',
