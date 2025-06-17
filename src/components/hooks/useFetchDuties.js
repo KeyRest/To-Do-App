@@ -1,0 +1,37 @@
+import { useEffect, useState } from "react";
+
+const dynamicRoute = import.meta.env.VITE_DYNAMIC_ROUTE;
+export const useFetchDuties = ({ user_id }) => {
+
+  const [duties, setDuties] = useState([]);
+  const getData = async () => {
+    try {
+      const response = await fetch(`${dynamicRoute}api/duties`,
+
+
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ id:3 }),
+        },
+
+      );
+
+      const duties = await response.json();
+      console.log(duties)
+      setDuties(duties);
+    } catch (error) {
+      console.log(error);
+    }
+
+  }
+  useEffect(() => {
+    getData()
+  }, [])
+
+  return {
+    duties
+  }
+}
