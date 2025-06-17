@@ -10,16 +10,17 @@ export const useFetchDuties = ({ user_id }) => {
 
 
         {
-          method: 'GET',
+          method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ user_id }),
+          body: JSON.stringify({ id:3 }),
         },
 
       );
 
       const duties = await response.json();
+      console.log(duties)
       setDuties(duties);
     } catch (error) {
       console.log(error);
